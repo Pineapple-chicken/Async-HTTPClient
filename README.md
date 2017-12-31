@@ -32,6 +32,11 @@ $ time ./main -n
 
 ### 利用 Channel 搭建基于消息的异步机制
 
+<code>
+$ time ./main -o
+
+</code>
+
 ![](https://jersey.github.io/documentation/latest/images/rx-client-async-approach.png)
 
 ### go 异步 REST 服务协作的优势
