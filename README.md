@@ -22,22 +22,22 @@ Assignment for service computing : Asynchronous HTTPClient
 
 ### 使用 go HTTPClient 实现 Naive Approach
 
-<code>
+```
 $ time -f "total time: %E" ./main -n
 
 total time: 0m5.394s
-</code>
+```
 
 
 ![](https://jersey.github.io/documentation/latest/images/rx-client-sync-approach.png)
 
 ### 利用 Channel 搭建基于消息的异步机制
 
-<code>
+```
 $ time -f "total time: %E" ./main -o
 
 total time: 0m0.728s
-</code>
+```
 
 ![](https://jersey.github.io/documentation/latest/images/rx-client-async-approach.png)
 
