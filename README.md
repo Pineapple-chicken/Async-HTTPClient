@@ -23,8 +23,9 @@ Assignment for service computing : Asynchronous HTTPClient
 ### 使用 go HTTPClient 实现 Naive Approach
 
 <code>
-$ time ./main -n
+$ time -f "total time: %E" ./main -n
 
+total time: 0m5.394s
 </code>
 
 
@@ -33,13 +34,15 @@ $ time ./main -n
 ### 利用 Channel 搭建基于消息的异步机制
 
 <code>
-$ time ./main -o
+$ time -f "total time: %E" ./main -o
 
+total time: 0m0.728s
 </code>
 
 ![](https://jersey.github.io/documentation/latest/images/rx-client-async-approach.png)
 
 ### go 异步 REST 服务协作的优势
+
 由前两个任务可以看到， go 异步 REST 服务协作相比于同步方法，同步方法需要总时间约为5400 ms，而异步 REST 服务协作只需要约730 ms就能完成任务。很明显，go 异步 REST 服务协作可以提高完成速度，同时高效利用和节省了资源。
 
 ### 一般性的解决方案
