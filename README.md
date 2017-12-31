@@ -8,7 +8,7 @@ Assignment for service computing : Asynchronous HTTPClient
 * 对比两种实现，用数据说明 go 异步 REST 服务协作的优势
 * *思考：* 是否存在一般性的解决方案？
 
-### Reactive动机
+### Reactive 动机
 
 ### 使用 go HTTPClient 实现 Naive Approach
 
