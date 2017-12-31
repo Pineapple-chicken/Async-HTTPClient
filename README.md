@@ -9,6 +9,7 @@ Assignment for service computing : Asynchronous HTTPClient
 * *思考：* 是否存在一般性的解决方案？
 
 ### Reactive 动机
+
 ![](https://jersey.github.io/documentation/latest/images/rx-client-problem.png)
 
 通过阅读文档[Motivation for Reactive Client](https://jersey.github.io/documentation/latest/rx-client.html#d0e5556)中6.1的内容，以及根据图6-1可总结出 Reactive 动机为：
@@ -20,11 +21,21 @@ Assignment for service computing : Asynchronous HTTPClient
 
 
 ### 使用 go HTTPClient 实现 Naive Approach
+
+<code>
+$ time ./main -n
+
+</code>
+
+
 ![](https://jersey.github.io/documentation/latest/images/rx-client-sync-approach.png)
 
 ### 利用 Channel 搭建基于消息的异步机制
+
 ![](https://jersey.github.io/documentation/latest/images/rx-client-async-approach.png)
 
 ### go 异步 REST 服务协作的优势
+由前两个任务可以看到， go 异步 REST 服务协作相比于同步方法，同步方法需要总时间约为5400 ms，而异步 REST 服务协作只需要约730 ms就能完成任务。很明显，go 异步 REST 服务协作可以提高完成速度，同时高效利用和节省了资源。
 
-### 思考：一般性的解决方案
+### 一般性的解决方案
+由文档可知，对于编排层的实现，最简单的方法是使用同步方法 Naive Approach。而在获取信息时，使用 Optimized Approach, 通过并行调用独立请求可以降低同步方法所需的时间量。所以一般是使用这两种方法来解决问题的。
